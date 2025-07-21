@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotesApp - Your Personal Notes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📝 NotesApp</h1>
+            <div class="header-controls">
+                <button id="downloadBtn" class="btn btn-secondary">⬇ Download App</button>
+                <button id="clearAllBtn" class="btn btn-danger">🗑 Clear All</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="note-form">
+                <input type="text" id="noteTitle" placeholder="Note title..." maxlength="100">
+                <textarea id="noteContent" placeholder="Write your note here..." rows="4"></textarea>
+                <div class="form-controls">
+                    <button id="saveBtn" class="btn btn-primary">💾 Save Note</button>
+                    <button id="cancelBtn" class="btn btn-secondary" style="display: none;">❌ Cancel</button>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="🔍 Search notes..." autocomplete="off">
+            </div>
+
+            <div class="notes-grid" id="notesGrid">
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📝</div>
+                    <h3>No notes yet</h3>
+                    <p>Create your first note above to get started!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notifications" class="notifications"></div>
+
+    <!-- PWA Install Prompt -->
+    <div id="installPrompt" class="install-prompt" style="display: none;">
+        <div class="install-content">
+            <h3>📱 Install NotesApp</h3>
+            <p>Install this app on your device for quick access and offline use!</p>
+            <div class="install-buttons">
+                <button id="installBtn" class="btn btn-primary">Install</button>
+                <button id="dismissBtn" class="btn btn-secondary">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
